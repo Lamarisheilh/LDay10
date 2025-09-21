@@ -1,9 +1,18 @@
-from tkinter import *
-master = Tk()
-w = Canvas(master, width=40, height=60)
-w.pack()
-canvas_height=20
-canvas_width=200
-y = int(canvas_height / 2)
-w.create_line(0, y, canvas_width, y )
-mainloop()
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Color Options in Tkinter")
+
+# Create a button with active background and foreground colors
+button = tk.Button(root, text="Click Me", activebackground="blue", activeforeground="white")
+button.pack()
+
+# Create a label with background and foreground colors
+label = tk.Label(root, text="Hello, Tkinter!", bg="lightgray", fg="black")
+label.pack()
+
+# Create an Entry widget with selection colors
+entry = tk.Entry(root, selectbackground="lightblue", selectforeground="black")
+entry.pack()
+
+root.mainloop()

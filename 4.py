@@ -1,6 +1,15 @@
-import tkinter as tk
-r = tk.Tk()
-r.title('Counting Seconds')
-button = tk.Button(r, text='Stop', width=25, command=r.destroy)
-button.pack()
-r.mainloop()
+from tkinter import *
+
+master = Tk()
+master.title("-")
+master.geometry("100x50")
+
+w1 = IntVar()
+w1 = Checkbutton(master, text='male', variable=w1)
+w1.grid(row=0, sticky=W)
+
+w2 = IntVar()
+w2 = Checkbutton(master, text='female', variable=w2)
+w2.grid(row=1, sticky=W)
+
+mainloop()

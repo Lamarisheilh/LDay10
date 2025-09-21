@@ -1,10 +1,16 @@
-from tkinter import *
-m1 = PanedWindow()
-m1.pack(fill=BOTH, expand=1)
-left = Entry(m1, bd=5)
-m1.add(left)
-m2 = PanedWindow(m1, orient=VERTICAL)
-m1.add(m2)
-top = Scale(m2, orient=HORIZONTAL)
-m2.add(top)
-mainloop()
+import tkinter as tk
+
+root = tk.Tk()
+root.title("Pack Example")
+
+# Create three buttons
+button1 = tk.Button(root, text="Button 1")
+button2 = tk.Button(root, text="Button 2")
+button3 = tk.Button(root, text="Button 3")
+
+# Pack the buttons vertically
+button1.pack()
+button2.pack()
+button3.pack()
+
+root.mainloop()

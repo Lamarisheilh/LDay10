@@ -1,16 +1,23 @@
 import tkinter as tk
 
+def on_key_press(event):
+    print(f"Key pressed: {event.keysym}")
+
+def on_left_click(event):
+    print(f"Left click at ({event.x}, {event.y})")
+
+def on_right_click(event):
+    print(f"Right click at ({event.x}, {event.y})")
+
+def on_mouse_motion(event):
+    print(f"Mouse moved to ({event.x}, {event.y})")
+
 root = tk.Tk()
-root.title("Grid Example")
+root.title("Advanced Event Handling Example")
 
-# Create three labels
-label1 = tk.Label(root, text="Label 1")
-label2 = tk.Label(root, text="Label 2")
-label3 = tk.Label(root, text="Label 3")
-
-# Grid the labels in a 2x2 grid
-label1.grid(row=0, column=0)
-label2.grid(row=0, column=1)
-label3.grid(row=1, column=0, columnspan=2)
+root.bind("<KeyPress>", on_key_press)
+root.bind("<Button-1>", on_left_click)
+root.bind("<Button-3>", on_right_click)
+root.bind("<Motion>", on_mouse_motion)
 
 root.mainloop()

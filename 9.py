@@ -1,11 +1,21 @@
-from tkinter import *
-root = Tk()
-scrollbar = Scrollbar(root)
-scrollbar.pack(side=RIGHT, fill=Y)
-mylist = Listbox(root, yscrollcommand=scrollbar.set)
+import tkinter as tk
+from tkinter import ttk
 
-for line in range(100):
-    mylist.insert(END, 'This is line number' + str(line))
-mylist.pack(side=LEFT, fill=BOTH)
-scrollbar.config(command=mylist.yview)
-mainloop()
+def select(event):
+    selected_item = combo_box.get()
+    label.config(text="Selected Item: " + selected_item)
+
+root = tk.Tk()
+root.title("Combobox Example")
+
+
+label = tk.Label(root, text="Selected Item: ")
+label.pack(pady=10)
+
+combo_box = ttk.Combobox(root, values=["Option 1", "Option 2", "Option 3"], state='readonly')
+combo_box.pack(pady=5)
+
+combo_box.set("Option 1")
+
+combo_box.bind("<<ComboboxSelected>>", select)
+root.mainloop()

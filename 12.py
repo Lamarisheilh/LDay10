@@ -1,24 +1,11 @@
-import tkinter as tk
-from tkinter import ttk
+from tkinter import *
 
-def select(event):
-    selected_item = combo_box.get()
-    label.config(text="Selected Item: " + selected_item)
+main = Tk()
 
-root = tk.Tk()
-root.title("Combobox Example")
+ourMessage = 'This is our Message'
 
-# Create a label
-label = tk.Label(root, text="Selected Item: ")
-label.pack(pady=10)
+messageVar = Message(main, text=ourMessage)
+messageVar.config(bg='lightgreen')
+messageVar.pack()
 
-# Create a Combobox widget
-combo_box = ttk.Combobox(root, values=["Option 1", "Option 2", "Option 3"], state='readonly'))
-combo_box.pack(pady=5)
-
-# Set default value
-combo_box.set("Option 1")
-
-# Bind event to selection
-combo_box.bind("<<ComboboxSelected>>", select)
-root.mainloop()
+main.mainloop()

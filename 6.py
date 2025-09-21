@@ -1,7 +1,13 @@
 from tkinter import *
-master = Tk()
-var1 = IntVar()
-Checkbutton(master, text='male', variable=var1).grid(row=0, sticky=W)
-var2 = IntVar()
-Checkbutton(master, text='female', variable=var2).grid(row=1, sticky=W)
-mainloop()
+top = Tk()
+top.title("-")
+
+Lb = Listbox(top)
+Lb.insert(1, 'Python')
+Lb.insert(2, 'Java')
+Lb.insert(3, 'C++')
+Lb.insert(4, 'Java')
+Lb.insert(4, 'Any other')
+Lb.pack()
+
+top.mainloop()

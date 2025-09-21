@@ -1,6 +1,16 @@
 from tkinter import *
+
 root = Tk()
-v = IntVar()
-Radiobutton(root, text='GfG', variable=v, value=1).pack(anchor=W)
-Radiobutton(root, text='MIT', variable=v, value=2).pack(anchor=W)
+
+scrollbar = Scrollbar(root)
+scrollbar.pack(side=RIGHT, fill=Y)
+
+mylist = Listbox(root, yscrollcommand=scrollbar.set)
+
+for line in range(50):
+    mylist.insert(END, 'This is line number' + str(line+1))
+
+mylist.pack(side=LEFT, fill=BOTH)
+scrollbar.config(command=mylist.yview)
+
 mainloop()

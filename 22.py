@@ -1,18 +1,16 @@
 import tkinter as tk
 
 root = tk.Tk()
-root.title("Color Options in Tkinter")
+root.title("Grid Example")
 
-# Create a button with active background and foreground colors
-button = tk.Button(root, text="Click Me", activebackground="blue", activeforeground="white")
-button.pack()
+# Create three labels
+label1 = tk.Label(root, text="Label 1")
+label2 = tk.Label(root, text="Label 2")
+label3 = tk.Label(root, text="Label 3")
 
-# Create a label with background and foreground colors
-label = tk.Label(root, text="Hello, Tkinter!", bg="lightgray", fg="black")
-label.pack()
-
-# Create an Entry widget with selection colors
-entry = tk.Entry(root, selectbackground="lightblue", selectforeground="black")
-entry.pack()
+# Grid the labels in a 2x2 grid
+label1.grid(row=0, column=0)
+label2.grid(row=0, column=1)
+label3.grid(row=1, column=0, columnspan=2)
 
 root.mainloop()
